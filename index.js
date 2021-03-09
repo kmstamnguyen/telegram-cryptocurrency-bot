@@ -25,13 +25,6 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 bot.onText(/\/coin (.+)/, async (msg, match) => {
   const coin = _.get(match, "[1]", "");
   const data = await getLatestQuote(coin);
-  console.log(data);
-  var number = 123456.789;
-
-  // request a currency format
-  console.log(
-    new Intl.NumberFormat("en-IN").format(_.get(data, "USD.price", 0))
-  );
   const format = (value) => {
     return new Intl.NumberFormat("en-IN").format(value);
   };
